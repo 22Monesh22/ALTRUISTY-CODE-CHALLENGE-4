@@ -1,0 +1,18 @@
+import java.util.*;
+public class BalloonCount{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int total = scn.nextInt();
+        scn.nextLine(); 
+        Map<Character, Integer> tracker = new LinkedHashMap<>();
+        for (int i=0; i<total;i++) {
+            char color = scn.nextLine().charAt(0);
+            tracker.put(color, tracker.getOrDefault(color, 0) + 1);
+        }
+        for (char key : tracker.keySet()){
+            if (tracker.get(key) % 2 != 0){
+                System.out.println(key);
+                return;
+            }}
+        System.out.println("All are even");
+    }}
